@@ -3,7 +3,8 @@ package rpn_test
 import (
 	"testing"
 
-	rpn "github.com/daarinaaa/rpn/pkg"
+	"github.com/daarinaaa/rpn/rpn"
+	//rpn "github.com/daarinaaa/rpn/pkg"
 )
 
 func TestCalc(t *testing.T) {
@@ -31,6 +32,21 @@ func TestCalc(t *testing.T) {
 			name:           "/",
 			expression:     "1/2",
 			expectedResult: 0.5,
+		},
+		{
+			name:           "n1",
+			expression:     "(1/2+1)*2",
+			expectedResult: 3,
+		},
+		{
+			name:           "n2",
+			expression:     "3+3+3+3-5*2",
+			expectedResult: 2,
+		},
+		{
+			name:           "n3",
+			expression:     "1/2*0",
+			expectedResult: 0,
 		},
 	}
 
@@ -66,6 +82,10 @@ func TestCalc(t *testing.T) {
 		{
 			name:       "empty",
 			expression: "",
+		},
+		{
+			name:       "LOH",
+			expression: "222(4)",
 		},
 	}
 
